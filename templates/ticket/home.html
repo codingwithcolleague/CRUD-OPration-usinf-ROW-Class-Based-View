@@ -1,0 +1,42 @@
+ {% extends 'base.html' %} 
+ 
+ {% block containt %}
+ <h2 style="color:#1372c5; text-align:center;padding-bottom:26px">Reliance Metro (Class Based View) </h2>
+ <p> </p>
+ <p> </p>
+ <p> </p>
+  <button style="float:right; margin-bottom:25px"     type="button" class="btn btn-primary"> 
+    <a style="color:white" href="{% url 'ticket:create' %}"> Add Jounery </a> </button>
+
+ 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Mobile</th>
+        <th>Start Place</th>
+        <th>End Place</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  for data in query %}
+      <tr>
+        <td>{{ data.name }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>{{ data.startplace }}</td>
+        <td>{{ data.endplace }}</td>
+        <td>{{ data.status }}</td>
+        <td>
+            <button type="button" class="btn btn-primary"><a style="color:white" href="{%  url 'ticket:edit'  data.id %}" > Edit <a/> </button>
+            <button type="button" class="btn btn-danger"><a style="color:white" href="{%  url 'ticket:delete'  data.id %}" > Delete <a/> </button>
+        </td>
+      </tr>
+
+      {% endfor %}
+      
+    </tbody>
+  </table>
+
+{% endblock %}

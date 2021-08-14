@@ -1,0 +1,16 @@
+ {% extends 'base.html' %} 
+ 
+ {% block containt %}
+ <h2 style="color:#1372c5; text-align:center;padding-bottom:26px">Reliance Metro (Class Based View) </h2>
+ <p> </p>
+ <p> </p>
+ <p> </p>
+
+<form action="" method="POST">
+ {% csrf_token %}
+  {{ form.as_p }}
+
+ <button class="btn btn-primary" type="submit" > submit </buton>
+
+</form>
+{% endblock %}
